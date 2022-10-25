@@ -2,9 +2,7 @@ require('dotenv').config();
 const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
-const {
-  DB_USER, DB_PASSWORD, DB_HOST,
-} = process.env;
+const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
 
 const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/pokemon`, {
   logging: false, // set to console.log to see the raw SQL queries
@@ -34,8 +32,8 @@ const { Pokemon, Type } = sequelize.models;
 
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
-Pokemon.belongsToMany(Type, {through: "Pokemons_Type"});  // preguntar si un pokemon puede ser de 2 o mas tipos({through: "Pokemons_Type"})
-Type.belongsToMany(Pokemon, {through: "Pokemons_Type"});
+Pokemon.belongsToMany(Type, { through: "Pokemons_Type" });  // preguntar si un pokemon puede ser de 2 o mas tipos({through: "Pokemons_Type"})
+Type.belongsToMany(Pokemon, { through: "Pokemons_Type" });
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
