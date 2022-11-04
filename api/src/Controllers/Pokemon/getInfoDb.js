@@ -2,11 +2,11 @@ const { Type, Pokemon } = require("../../db");
 
 const getInfoDB = async () => {
   try {
-    let dbData = await Pokemon.findAll({
-      include: {
-        model: Type,
-        attributes: ["name"],
-        through: {
+    let dbData = await Pokemon.findAll({    // busco la info en la db
+      include: {    // incluye 
+        model: Type,    // modelo type (models/type)
+        attributes: ["name"],   // traeme este atributo (nombre)
+        through: {    // trae los atributos (en este caso traeme los atributos de types)
           types: [],
         },
       },

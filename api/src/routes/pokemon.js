@@ -18,27 +18,27 @@ router.post("/", async (req, res) => {
         };
 
         let id = Math.floor(Math.random() * 1234567);
-        let [createPoke, exist] = await Pokemon.findOrCreate({
-            where: {
-                id: id,
-                img,
-                name,
-                health,
-                strength,
-                defense,
-                speed,
-                height,
-                weight,
-            },
+        let createPoke = await Pokemon.create({
+
+            id: id,
+            img,
+            name,
+            health,
+            strength,
+            defense,
+            speed,
+            height,
+            weight,
+
         });
 
         tiposEnArray.forEach(async (t) => {
-            let postTypes = await Type.findAll({ where: { name: t } });
-            await createPoke.addType(postTypes);
+            let postTypes = await Type.findAll({ where: { id: t } });
+            await createPoke.addTypes(postTypes);
         });
         return res.status(200).json(createPoke);
     } catch (error) {
-        return res.status(404).json('Error', error);
+        return res.status(404).json(error);
     };
 });
 

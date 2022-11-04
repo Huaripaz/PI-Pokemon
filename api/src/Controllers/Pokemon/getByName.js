@@ -4,7 +4,7 @@ const { Pokemon, Op, Type } = require("../../db");
 const getByName = async (name) => {
   try {
     const nameDb = await Pokemon.findOne({
-      where: { name: { [Op.iLike]: `%${name}%` } },
+      where: { name: name },
       include: {
         model: Type,
         attributes: ["name"],

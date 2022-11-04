@@ -48,11 +48,10 @@ module.exports = (sequelize) => {
       allowNull: false,
       defaultValue: true,
     },
-  }),
-  {
+  }, {
     timestamps: false,
     // sequalize crea automaticamente los modelos createAt y updateAt, esto lo cancelamos con el timestamps.
     freezeTableName: true,
     // nos sirve para verificar que el nombre de la tabla es igual al nombre del modelo que le estamos enviando.
-  };
+  });
 };

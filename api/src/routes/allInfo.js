@@ -1,7 +1,7 @@
 const router = require("express").Router();
 
-const allInfo = require("../Controllers/Pokemon/allInfo");
-const getByName = require("../Controllers/Pokemon/getByName");
+const allInfo = require("../Controllers/Pokemon/allInfo.js");
+const getByName = require("../Controllers/Pokemon/getByName.js");
 
 router.get("/", async (req, res) => {
   const { name } = req.query;
