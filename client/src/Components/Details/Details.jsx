@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { getDetail, resState } from "../../redux/actions/actions";
 import Loader from "../Loader/Loader";
 import "./Details.css";
-import imagenPoke from "../pokemon.jpg";
+import imagenPoke from "../pokemon.png";
 
 export default function Detail() {
   const { id } = useParams();

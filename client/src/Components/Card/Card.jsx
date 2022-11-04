@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-roter-dom";
+import { Link } from 'react-router-dom';
 import "./Card.css";
 import imagenPoke from "../pokemon.png"
 
