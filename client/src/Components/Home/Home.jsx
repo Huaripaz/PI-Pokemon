@@ -62,17 +62,6 @@ export default function Home() {
         setAct(`${name}`);
     };
 
-    function handleClick(e) {
-        setTypes("All Pokes");
-        setStrength("asc");
-        setOrigin("allPoke");
-        setCharge(true);
-        setTimeout(() => {
-            setCharge(false);
-        }, 7000);
-        dispatch(getPokes());
-    };
-
     function handleClickFilter(e) {
         e.preventDefault();
         dispatch(handleFilter(origin));
@@ -101,17 +90,6 @@ export default function Home() {
         <div>
             <div className="home-container">
                 <Navbar setCurrentPage={setCurrentPage} />
-                <div className="div-buttons">
-                    {" "}
-                    <button
-                        className="home-btn"
-                        onClick={(e) => {
-                            handleClick(e);
-                        }}
-                    >
-                        Reload Pokémons
-                    </button>
-                </div>
                 <div className="div-filt">
                     <div>
                         <select
@@ -243,10 +221,9 @@ export default function Home() {
                         })
                     ) : (
                         <div className="div-not-found">
-                            <h4>Ups! Pokémon not found</h4>
-                            <h5>Try creating a new pokémon</h5>
+                            <h4>That pokemon is not here 🙁</h4>
                         </div>
-                    )};
+                    )}
                 </div>
             </div>
         </div>

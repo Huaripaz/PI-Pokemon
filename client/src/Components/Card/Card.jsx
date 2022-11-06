@@ -15,9 +15,9 @@ export default function Card({ id, types, name, img}) {
                         width="150px"
                     />
                 </div>
-                <h3 className="text-title">{name.toUpperCase()}</h3>
+                <h3 className="text-title">{name[0].toUpperCase() + name.substring(1)}</h3>
                 <h3 className="text-body">
-                    types:{" "}
+                    Type:{" "}
                     {types.map((e) => " " + e.charAt(0).toUpperCase() + e.slice(1) + " ")}
                 </h3>
             </div>
