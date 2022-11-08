@@ -49,13 +49,6 @@ export function getDetail(id) {
     };
 };
 
-export function postPoke(payload) {
-    return async function () {
-        const create = await axios.post("http://localhost:3001/pokemon", payload);
-        return create;
-    };
-};
-
 export function cleanFilters(payload) {
     return {
         type: "CLEAN_FILTERS",

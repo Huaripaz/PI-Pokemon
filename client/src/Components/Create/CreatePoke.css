@@ -8,6 +8,11 @@
   font-family: 'TTVTechPrecomput', sans-serif;
 }
 
+.msgError {
+  color: red;
+  font-weight: bold;
+}
+
 .formPerfil {
   color: #343a40;
   display: flex;

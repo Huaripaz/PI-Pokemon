@@ -6,9 +6,6 @@ const getInfoDB = async () => {
       include: {    // incluye 
         model: Type,    // modelo type (models/type)
         attributes: ["name"],   // traeme este atributo (nombre)
-        through: {    // trae los atributos (en este caso traeme los atributos de types)
-          types: [],
-        },
       },
     });
 

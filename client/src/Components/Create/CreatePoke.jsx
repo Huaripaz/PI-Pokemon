@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import axios from 'axios';
 import { getTypes, resState, postPoke, getPokes } from "../../redux/actions/actions";
 import Loader from "../Loader/Loader";
 import Message from "../Message/Message";
@@ -37,7 +38,7 @@ export default function CreatePoke() {
     dispatch(getPokes());
   }, [dispatch]);
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
     const a = allPokes.filter((b) => b.name === input.name);
     if (a.length > 0) {
@@ -66,7 +67,8 @@ export default function CreatePoke() {
         types: input.types.join(", "),
       };
 
-      dispatch(postPoke(crear));
+      const create = await axios.post("http://localhost:3001/pokemon", crear);
+      console.log(create);
 
       // setLoading(false);
       setResponse(true);
@@ -169,7 +171,7 @@ export default function CreatePoke() {
               className="inputName"
             />
 
-            <strong>{errors.name}</strong>
+            <strong className="msgError"> {errors.name }</strong>
           </div>
           <div key="strength8" className="inputs">
             <label key="Strength" className="title5">
@@ -185,7 +187,7 @@ export default function CreatePoke() {
               className="inputStrength"
             />
 
-            <strong>{errors.strength}</strong>
+            <strong className="msgError"> {errors.strength}</strong>
           </div>
 
           <div key="defense8" className="inputs">
@@ -202,7 +204,7 @@ export default function CreatePoke() {
               className="inputDefense"
             />
 
-            <strong>{errors.defense}</strong>
+            <strong className="msgError"> {errors.defense}</strong>
           </div>
 
           <div key="img8" className="inputs">
@@ -232,7 +234,7 @@ export default function CreatePoke() {
               className="inputHealth"
             />
 
-            <strong>{errors.health}</strong>
+            <strong className="msgError"> {errors.health}</strong>
           </div>
           <div key="height8" className="inputs">
             <label key="height2" className="title5">
@@ -248,7 +250,7 @@ export default function CreatePoke() {
               className="inputHeight"
             />
 
-            <strong>{errors.height}</strong>
+            <strong className="msgError"> {errors.height}</strong>
           </div>
           <div key="weight8" className="inputs">
             <label key="weight2" className="title5">
@@ -264,7 +266,7 @@ export default function CreatePoke() {
               className="inputWeight"
             />
 
-            <strong>{errors.weight}</strong>
+            <strong className="msgError"> {errors.weight}</strong>
           </div>
           <div key="speed8" className="inputs">
             <label key="speed2" className="title5">
@@ -280,7 +282,7 @@ export default function CreatePoke() {
               className="inputSpeed"
             />
 
-            <strong>{errors.speed}</strong>
+            <strong className="msgError"> {errors.speed}</strong>
           </div>
           <div key="types8" className="types">
             <label key="types" className="title5" value="types6" name="types7">
@@ -304,7 +306,7 @@ export default function CreatePoke() {
 
             <div key="choosed8" className="choosed">
               {!input.types.length ? (
-                <strong>{errors.types}</strong>
+                <strong className="msgError"> {errors.types}</strong>
               ) : (
                 input.types.map((value, i) => {
                   return (
