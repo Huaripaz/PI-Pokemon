@@ -33,7 +33,7 @@ router.post("/", async (req, res) => {
         });
 
         tiposEnArray.forEach(async (t) => {
-            let postTypes = await Type.findAll({ where: { id: t } });
+            let postTypes = await Type.findAll({ where: { name: t } });
             await createPoke.addTypes(postTypes);
         });
         return res.status(200).json(createPoke);
