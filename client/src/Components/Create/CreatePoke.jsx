@@ -19,7 +19,7 @@ export default function CreatePoke() {
 
   const [input, setInput] = useState({
     name: "",
-    hp: "",
+    health: "",
     strength: "",
     defense: "",
     height: "",
@@ -46,7 +46,7 @@ export default function CreatePoke() {
 
     if (
       input.name.length &&
-      input.hp.length &&
+      input.health.length &&
       input.strength.length &&
       input.defense.length &&
       input.height.length &&
@@ -56,7 +56,7 @@ export default function CreatePoke() {
     ) {
       let crear = {
         name: input.name,
-        hp: input.hp,
+        health: input.health,
         strength: input.strength,
         defense: input.defense,
         height: input.height,
@@ -74,7 +74,7 @@ export default function CreatePoke() {
       setTimeout(() => setResponse(false), 4000);
       setInput({
         name: "",
-        hp: "",
+        health: "",
         strength: "",
         defense: "",
         height: "",
@@ -86,7 +86,7 @@ export default function CreatePoke() {
       });
     } else if (
       !input.name.length ||
-      !input.hp.length ||
+      !input.health.length ||
       !input.strength.length ||
       !input.defense.length ||
       !input.height.length ||
@@ -139,7 +139,7 @@ export default function CreatePoke() {
   }
 
   return (
-    <div key="form" className="formPerfil">
+    <div className="content">
       <div key="up" className="up-things">
         <Link to="/home">
           <button key="up1" className="boton">
@@ -147,201 +147,211 @@ export default function CreatePoke() {
           </button>
         </Link>
       </div>
-      <div key="up45">
-        <h1 key="up2" className="titleForm">
-          Create Pokémon
-        </h1>
-      </div>
-
-      <form key="form4" className="form" onSubmit={resState}>
-        <div key="name8">
-          <label key="name" className="title5">
-            Name:
-          </label>
-          <input
-            key="name2"
-            type="text"
-            name="name"
-            placeholder="Poke Name"
-            value={input.name}
-            onChange={(e) => handelChange(e)}
-          />
-
-          <strong>{errors.name}</strong>
-        </div>
-        <div key="strength8">
-          <label key="Strength" className="title5">
-            Strength:
-          </label>
-          <input
-            type="number"
-            name="strength"
-            key="strength2"
-            placeholder="Strength"
-            value={input.strength}
-            onChange={(e) => handelChange(e)}
-          />
-
-          <strong>{errors.strength}</strong>
-        </div>
-
-        <div key="defense8">
-          <label key="defense" className="title5">
-            Defense:
-          </label>
-          <input
-            type="number"
-            name="defense"
-            key="defense2"
-            placeholder="Defense"
-            value={input.defense}
-            onChange={(e) => handelChange(e)}
-          />
-
-          <strong>{errors.defense}</strong>
-        </div>
-
-        <div key="img8">
-          <label key="image" name="img" className="title5">
-            Image:
-          </label>
-          <input
-            key="image2"
-            name="img"
-            value={input.img}
-            placeholder="URL"
-            onChange={(e) => handelChange(e)}
-          ></input>
-        </div>
-        <div key="hp8">
-          <label key="hp2" className="title5">
-            HP:
-          </label>
-          <input
-            type="number"
-            name="hp"
-            key="hp3"
-            placeholder="HP"
-            value={input.hp}
-            onChange={(e) => handelChange(e)}
-          />
-
-          <strong>{errors.hp}</strong>
-        </div>
-        <div key="height8">
-          <label key="height2" className="title5">
-            Height:
-          </label>
-          <input
-            type="number"
-            name="height"
-            key="height3"
-            placeholder="Height"
-            value={input.height}
-            onChange={(e) => handelChange(e)}
-          />
-
-          <strong>{errors.height}</strong>
-        </div>
-        <div key="weight8">
-          <label key="weight2" className="title5">
-            Weight:
-          </label>
-          <input
-            type="number"
-            name="weight"
-            key="weight3"
-            placeholder="Weight"
-            value={input.weight}
-            onChange={(e) => handelChange(e)}
-          />
-
-          <strong>{errors.weight}</strong>
-        </div>
-        <div key="speed8">
-          <label key="speed2" className="title5">
-            Speed:
-          </label>
-          <input
-            type="number"
-            name="speed"
-            key="speed3"
-            placeholder="Speed"
-            value={input.speed}
-            onChange={(e) => handelChange(e)}
-          />
-
-          <strong>{errors.speed}</strong>
-        </div>
-        <div key="types8">
-          <label key="types" className="title5" value="types6" name="types7">
-            {" "}
-            Types:{" "}
-          </label>
-          <select
-            key="genres2"
-            className="boton6"
-            onChange={(e) => handleSelectTypes(e)}
-          >
-            {allTypes &&
-              allTypes
-                .sort((a, b) => (a.name > b.name ? 1 : -1))
-                .map((e, i) => (
-                  <option key={i} value={e.name}>
-                    {e.name.toUpperCase()}
-                  </option>
-                ))}
-          </select>
-
-          <div key="choosed8" className="choosed">
-            {!input.types.length ? (
-              <strong>{errors.types}</strong>
-            ) : (
-              input.types.map((value, i) => {
-                return (
-                  <div key={i} className="card98">
-                    <button
-                      onClick={handleDelete}
-                      value={value}
-                      className="cross"
-                      key="botonX"
-                    >
-                      X
-                    </button>
-                    <span key="poke" className="pokeName">
-                      {value.toUpperCase()}
-                    </span>
-                  </div>
-                );
-              })
-            )}
-          </div>
-        </div>
-        <div key="button8">
-          <button
-            key="submit"
-            className="btn-createPoke"
-            type="submit"
-            onClick={(e) => handleSubmit(e)}
-          >
-            {" "}
+      <div key="form" className="formPerfil">
+        <div key="up45">
+          <h1 key="up2" className="titleForm">
             Create Pokémon
-          </button>
+          </h1>
         </div>
-        {loading && <Loader />}
-        {response && (
-          <Message
-            msg="The pokémon was successfully created"
-            bgColor="#198754"
-          />
-        )}
-        {err && (
-          <Message
-            msg="You have to complete all the fields"
-            bgColor="#FF0000"
-          />
-        )}
-      </form>
+
+        <form key="form4" className="form" onSubmit={resState}>
+          <div key="name8" className="inputs">
+            <label key="name" className="title5">
+              Name:
+            </label>
+            <input
+              key="name2"
+              type="text"
+              name="name"
+              placeholder="Name"
+              value={input.name}
+              onChange={(e) => handelChange(e)}
+              className="inputName"
+            />
+
+            <strong>{errors.name}</strong>
+          </div>
+          <div key="strength8" className="inputs">
+            <label key="Strength" className="title5">
+              Strength:
+            </label>
+            <input
+              type="number"
+              name="strength"
+              key="strength2"
+              placeholder="Strength"
+              value={input.strength}
+              onChange={(e) => handelChange(e)}
+              className="inputStrength"
+            />
+
+            <strong>{errors.strength}</strong>
+          </div>
+
+          <div key="defense8" className="inputs">
+            <label key="defense" className="title5">
+              Defense:
+            </label>
+            <input
+              type="number"
+              name="defense"
+              key="defense2"
+              placeholder="Defense"
+              value={input.defense}
+              onChange={(e) => handelChange(e)}
+              className="inputDefense"
+            />
+
+            <strong>{errors.defense}</strong>
+          </div>
+
+          <div key="img8" className="inputs">
+            <label key="image" name="img" className="title5">
+              Image:
+            </label>
+            <input
+              key="image2"
+              name="img"
+              value={input.img}
+              placeholder="URL"
+              onChange={(e) => handelChange(e)}
+              className="inputImg"
+            ></input>
+          </div>
+          <div key="hp8" className="inputs">
+            <label key="hp2" className="title5">
+              Health:
+            </label>
+            <input
+              type="number"
+              name="health"
+              key="hp3"
+              placeholder="Health"
+              value={input.health}
+              onChange={(e) => handelChange(e)}
+              className="inputHealth"
+            />
+
+            <strong>{errors.health}</strong>
+          </div>
+          <div key="height8" className="inputs">
+            <label key="height2" className="title5">
+              Height:
+            </label>
+            <input
+              type="number"
+              name="height"
+              key="height3"
+              placeholder="Height"
+              value={input.height}
+              onChange={(e) => handelChange(e)}
+              className="inputHeight"
+            />
+
+            <strong>{errors.height}</strong>
+          </div>
+          <div key="weight8" className="inputs">
+            <label key="weight2" className="title5">
+              Weight:
+            </label>
+            <input
+              type="number"
+              name="weight"
+              key="weight3"
+              placeholder="Weight"
+              value={input.weight}
+              onChange={(e) => handelChange(e)}
+              className="inputWeight"
+            />
+
+            <strong>{errors.weight}</strong>
+          </div>
+          <div key="speed8" className="inputs">
+            <label key="speed2" className="title5">
+              Speed:
+            </label>
+            <input
+              type="number"
+              name="speed"
+              key="speed3"
+              placeholder="Speed"
+              value={input.speed}
+              onChange={(e) => handelChange(e)}
+              className="inputSpeed"
+            />
+
+            <strong>{errors.speed}</strong>
+          </div>
+          <div key="types8" className="types">
+            <label key="types" className="title5" value="types6" name="types7">
+              {" "}
+              Types:{" "}
+            </label>
+            <select
+              key="genres2"
+              className="inputTypes"
+              onChange={(e) => handleSelectTypes(e)}
+            >
+              {allTypes &&
+                allTypes
+                  .sort((a, b) => (a.name > b.name ? 1 : -1))
+                  .map((e, i) => (
+                    <option key={i} value={e.name}>
+                      {e.name.toUpperCase()}
+                    </option>
+                  ))}
+            </select>
+
+            <div key="choosed8" className="choosed">
+              {!input.types.length ? (
+                <strong>{errors.types}</strong>
+              ) : (
+                input.types.map((value, i) => {
+                  return (
+                    <div key={i} className="inputType">
+                      <button
+                        onClick={handleDelete}
+                        value={value}
+                        className="cross"
+                        key="botonX"
+                      >
+                        X
+                      </button>
+                      <span key="poke" className="pokeName">
+                        {value.toUpperCase()}
+                      </span>
+                    </div>
+                  );
+                })
+              )}
+            </div>
+          </div>
+          <div key="button8" className="contBtnCreate">
+            <button
+              key="submit"
+              className="btn-createPoke"
+              type="submit"
+              onClick={(e) => handleSubmit(e)}
+            >
+              {" "}
+              Create Pokémon
+            </button>
+          </div>
+          {loading && <Loader />}
+          {response && (
+            <Message
+              msg="The pokémon was successfully created"
+              bgColor="#198754"
+            />
+          )}
+          {err && (
+            <Message
+              msg="You have to complete all the fields"
+              bgColor="#FF0000"
+            />
+          )}
+        </form>
+      </div>
     </div>
   );
 };

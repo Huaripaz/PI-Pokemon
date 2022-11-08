@@ -44,7 +44,7 @@
 .create-poke:hover {
     border-color: #0000CD;
     box-shadow: 0px 3px 20px 0px rgb(124, 124, 124);
-    transform: scale(1.2);
+    transform: scale(1.1);
     background-color: #FFD700;
     color: #252422;
     transition: all 0.3 ease-out;
@@ -53,9 +53,11 @@
 .div-buttons {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;
     width: 20%;
     padding-top: 25px;
+    margin-right: 30px;
+    margin-top: 10px;
 }
 
 .div-buttons button{

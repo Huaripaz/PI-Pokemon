@@ -45,11 +45,11 @@
 .div-not-found {
     font-family: 'TTVTechPrecomput', sans-serif;
     font-size: 40px;
-    border: 3px solid #0000CD;
+    border: 3px solid #272727;
     border-radius: 35px;
     width: 450px;
     height: 200px;
-    margin: 30px;
+    margin-top: 30px;
     background-color: rgba(201, 192, 192, 0.856);
     text-align: center;
     display: flex;
@@ -57,7 +57,6 @@
     align-content: center;
     justify-content: center;
     color: #1a1b1b;
-    margin: 0px;
 }
 
 .btn-final {
@@ -76,4 +75,12 @@
     padding: 8px 20px;
     outline: none;
     background-color: #FFD700;
+}
+
+.btn-final:hover {
+    border: 3px solid #272727;
+    transform: scale(1.07);
+    background-color: #FFD700;
+    color: #fdfdfde7;
+    transition: all 0.3 ease-out;
 }

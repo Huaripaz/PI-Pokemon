@@ -37,6 +37,15 @@ export default function Detail() {
       </div>
     );
   } else {
+
+    const typesArr = [];
+
+    if (pokeDetail.types.length > 1) {
+      typesArr.push(`${pokeDetail.types[0].charAt(0).toUpperCase() + pokeDetail.types[0].slice(1)}, ${pokeDetail.types[1].charAt(0).toUpperCase() + pokeDetail.types[1].slice(1)}`);
+    } else {
+      typesArr.push(pokeDetail.types[0].charAt(0).toUpperCase() + pokeDetail.types[0].slice(1));
+    };
+
     return (
       <div className="paginado2">
         <div>
@@ -46,44 +55,37 @@ export default function Detail() {
             </button>
           </Link>
         </div>
-        <div>
-          <img
-            className="imagdetalle"
-            src={pokeDetail.img || imagenPoke}
-            alt={pokeDetail.name}
-            width="450px"
-            height="450px"
-          />
-        </div>
-
-        <div className="cardDetalle">
-          <div>
-            <h1>{pokeDetail.name.toUpperCase()}</h1>
+        <div className="details">
+          <div className="imgContainer">
+            <h1 className="name">{pokeDetail.name[0].toUpperCase() + pokeDetail.name.substring(1)}</h1>
+            <img
+              className="imagDetails"
+              src={pokeDetail.img || imagenPoke}
+              alt={pokeDetail.name}
+            />
           </div>
-          <div className="base3">
-            <h1>
-              Types:{" "}
-              {pokeDetail.types.map((e) => {
-                return (
-                  <p key={e}>{e.charAt(0).toUpperCase() + e.slice(1) + " "}</p>
-                );
-              })}
-            </h1>
-          </div>
-          <div className="base3">
-            <h2>HP: {pokeDetail.hp}</h2>
-          </div>
-          <div className="base3">
-            <h2>Speed: {pokeDetail.speed}</h2>
-          </div>
-          <div className="base3">
-            <h2>Height: {pokeDetail.height}</h2>
-          </div>
-          <div className="base3">
-            <h2>Weight: {pokeDetail.weight} </h2>
-          </div>
-          <div className="base3">
-            <h2>Defense: {pokeDetail.defense}</h2>
+          <div className="cardDetails">
+            <div className="base3">
+              <h2>
+                Type:{" "}
+                {typesArr.map((e) => e + " ")}
+              </h2>
+            </div>
+            <div className="base3">
+              <h2>Health: {pokeDetail.health}</h2>
+            </div>
+            <div className="base3">
+              <h2>Speed: {pokeDetail.speed}</h2>
+            </div>
+            <div className="base3">
+              <h2>Height: {pokeDetail.height}</h2>
+            </div>
+            <div className="base3">
+              <h2>Weight: {pokeDetail.weight} </h2>
+            </div>
+            <div className="base3">
+              <h2>Defense: {pokeDetail.defense}</h2>
+            </div>
           </div>
         </div>
       </div>

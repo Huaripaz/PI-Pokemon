@@ -9,10 +9,10 @@ export function validation(input) {
         errors.name = "The Name field only accepts letters and 4 to 10 characters";
     };
 
-    if (!input.hp.trim()) {
-        errors.hp = "HP field is required";
-    } else if (!regexStats.test(input.hp.trim())) {
-        errors.hp = "The HP field only accepts numbers from 0 to 100";
+    if (!input.health.trim()) {
+        errors.health = "Health field is required";
+    } else if (!regexStats.test(input.health.trim())) {
+        errors.health = "The Health field only accepts numbers from 0 to 100";
     };
     if (!input.strength.trim()) {
         errors.strength = "The Strength field is required";
