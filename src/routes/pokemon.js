@@ -29,7 +29,7 @@ router.post("/", async (req, res) => {
             speed,
             height,
             weight,
-
+            
         });
 
         tiposEnArray.forEach(async (t) => {
