@@ -248,12 +248,12 @@
 }
 
 .choosed {
-  width: 400px;
+  width: 200px;
   height: 35px;
   padding: 0rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   overflow-x: auto;
 }
 

@@ -6,18 +6,19 @@
     
 }
 
-.input {
+.inputSearch {
     font-family: 'TTVTechPrecomput', sans-serif;
     font-size: 20px;
     color: #252422;
     padding: 10px 10px 10px 5px;
     display: block;
     width: 200px;
-    border: none;
     background: transparent;
+    border-radius: 20px;
+    border: 2px solid black;
 }
 
-.input:focus {
+.inputSearch:focus {
     outline: none;
 }
 

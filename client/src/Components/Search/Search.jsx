@@ -26,7 +26,7 @@ export default function Search({ setCurrentPage }) {
                 }}
                 type="text"
                 placeholder="Search"
-                className="input"
+                className="inputSearch"
                 value={name}
             />
             <span className="highlight"></span>
