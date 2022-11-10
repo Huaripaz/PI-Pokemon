@@ -43,7 +43,7 @@ export default function Home() {
         setCharge(true);
         setTimeout(() => {
             setCharge(false);
-        }, 5000);
+        }, 10000);
         dispatch(getPokes());
     }, []);
 
