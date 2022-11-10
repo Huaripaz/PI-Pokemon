@@ -1,20 +1,20 @@
-const axios = require("axios");   // requerimos axios
-const { Type } = require("../../db");   // traemos la tabla de la db
+const axios = require("axios");   // Requerimos axios
+const { Type } = require("../../db");   // Destructuring de la tabla Type
 
 const getApiTypes = async () => {
   try {
-    let tipos = await Type.findAll({ attributes: ["name"] });   //  asi podemos lo traemos de la db
-    if (!tipos.length) {                                        // en caso de no tener ese atributo en la db 
-      let url = `https://pokeapi.co/api/v2/type`;               // lo traemos de la api
-      tipos = await axios.get(url);                             // lo guardamos en la variable
-      tipos = tipos.data.results.map((result) => ({             //  aca guardamos ese resultado en la propiedad name 
+    let tipos = await Type.findAll({ attributes: ["name"] });   // Nos guardamos los nombres de los Type de la db
+    if (!tipos.length) {    // Si no hay tipos, anda al catch 
+      let url = `https://pokeapi.co/api/v2/type`;   // Creamos una variable con los valores de la api
+      tipos = await axios.get(url);   // Hacemos la peticion a la api
+      tipos = tipos.data.results.map((result) => ({   // Recorremos la api guardando sus valores
         name: result.name,
       }));
-      await Type.bulkCreate(tipos);                             // y aca lo agregamos definitivamente a la tabla
+      await Type.bulkCreate(tipos);   // Creamos varias filas en la tabla de nuestra db 
     }
-    return tipos;
-  } catch (error) {
-    console.log(error);
+    return tipos;   // Retornamos
+  } catch (error) {   // O
+    console.log(error);   // Consologeamos el error
   }
 };
 

@@ -1,6 +1,6 @@
-const { Type, Pokemon } = require("../../db");
+const { Type, Pokemon } = require("../../db");    // Destructuring de las tablas
 
-const getInfoDB = async () => {
+const getInfoDB = async () => {   
   try {
     let dbData = await Pokemon.findAll({    // busco la info en la db
       include: {    // incluye 
@@ -9,7 +9,8 @@ const getInfoDB = async () => {
       },
     });
 
-    let poke = [];
+    let poke = [];    // Creamos un array vacio
+
     for (let i = 0; i < dbData.length; i++) {
       let tipos = dbData[i].types.map((tipo) => {
         return tipo.name;
