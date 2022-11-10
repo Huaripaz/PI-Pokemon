@@ -1,15 +1,15 @@
-const router = require("express").Router(); // requerimos express y lo nombramos router
-const axios = require("axios"); // requerimos axios
+const router = require("express").Router();   // Requerimos Router de express
+const axios = require("axios");   // Requerimos axios
 
-const { Pokemon, Type } = require("../db"); // requerimos las listas del la db
+const { Pokemon, Type } = require("../db");   // Destructuring de las tablas
 
-router.get("/:id", async (req, res) => {
-  const { id } = req.params; // validamos que nos pasen esos datos por params
+router.get("/:id", async (req, res) => {    // Creamos la ruta
+  const { id } = req.params;    // Vamos a recir id por params
 
   try {
     const dbPokes = await Pokemon.findOne({
-      where: { id: id },
-      include: {
+      where: { id: id },    // Cuando recibo id, va abuscar el mismo id que yo tengo en mi tabla Pokemon
+      include: {    //  Incluime el nombre del Type del Pokemon que busco
         model: Type,
         attribute: ["name"],
         through: {
@@ -18,12 +18,13 @@ router.get("/:id", async (req, res) => {
       },
     });
 
-    if (dbPokes) {
-      let dbTipo = dbPokes.types.map((tipo) => {
-        return tipo.name;
+    if (dbPokes) {    // Vamos a buscar el pokemon en mi db
+
+      let dbTipo = dbPokes.types.map((tipo) => {    // Recorre mis tipos en busca de los que matcheen  
+        return tipo.name;   // Busco el nombre de los tipos de Type segun el id
       });
 
-      const pokeId = {
+      const pokeId = {    // Creo el obj 
         id: dbPokes.id,
         name: dbPokes.name,
         img: dbPokes.img,
@@ -33,16 +34,17 @@ router.get("/:id", async (req, res) => {
         speed: dbPokes.speed,
         height: dbPokes.height,
         weight: dbPokes.weight,
-        types: dbTipo,
+        types: dbTipo,    // Vincular un array con los tipos especificos 
       };
 
-      return res.status(200).json(pokeId);
-    } else {
-      const allPokeId = await axios.get(
-        `https://pokeapi.co/api/v2/pokemon/${id}`
-      );
+      return res.status(200).json(pokeId);    // Retornamos el obj
+
+    } else {    // Si no encuentra el pokemon en mi db lo busca en la api
+
+      const allPokeId = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);   // Hacemos la peticion a la api
 
       const superData = allPokeId.data;
+
       const pokeId = {
         id: superData.id,
         name: superData.name,
@@ -55,8 +57,7 @@ router.get("/:id", async (req, res) => {
         weight: superData.weight,
         types: superData.types.map((el) => el.type.name),
       };
-
-        return res.status(200).send(pokeId);
+      return res.status(200).send(pokeId);
     }
   } catch (error) {
     res.status(404).json('Error', error);

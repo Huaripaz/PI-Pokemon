@@ -1,12 +1,7 @@
 import React from "react";
 import styles from "./Paginated.module.css";
 
-export default function Paginated({
-  pokesPerPage,
-  usePoke,
-  paginated,
-  currentPage,
-}) {
+export default function Paginated({pokesPerPage, usePoke, paginated, currentPage}) {
   const pageNumbers = [];
 
   for (let i = 0; i <= Math.ceil(usePoke / pokesPerPage) - 1; i++) {
