@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from 'axios';
-import { getTypes, resState, postPoke, getPokes } from "../../redux/actions/actions";
+import { getTypes, resState, getPokes } from "../../redux/actions/actions";
 import Loader from "../Loader/Loader";
 import Message from "../Message/Message";
 import { Link } from "react-router-dom";
@@ -15,7 +15,7 @@ export default function CreatePoke() {
   const allTypes = useSelector((e) => e.types);
   const allPokes = useSelector((e) => e.pokemons);
   const [response, setResponse] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [loading] = useState(false);
   const [err, setErr] = useState(false);
 
   const [input, setInput] = useState({
