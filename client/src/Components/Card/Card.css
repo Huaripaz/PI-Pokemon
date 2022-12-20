@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
 .card {
     width: 150px;
     height: 200px;
@@ -8,8 +10,7 @@
     border: 3.5px solid #272727;
     transition: 0.5s ease-out;
     overflow: visible;
-    font-family: 'TTVTechPrecomput', sans-serif;
-    font-size: 20px;
+    font-family: "Press Start 2P", cursive;
     margin: 15px 10px;
 }
 
@@ -38,7 +39,6 @@
     border-radius: 1rem;
     background-color: #272727;
     color: #e1c443;
-    font-size: 1rem;
     padding: .5rem 1rem;
     position: absolute;
     left: 50%;
@@ -53,12 +53,12 @@
 
 .text-body {
     color: #252422;
-    font-size: 20px;
+    font-size: 13px;
 }
 
 /*Text*/
 .text-title {
-    font-size: 25px;
+    font-size: 17px;
     font-weight: bold;
     color: #252422;
     margin: 0%;
@@ -70,8 +70,8 @@
 }
 
 .card:hover .card-button {
-    font-family: 'TTVTechPrecomput', sans-serif;
-    font-size: 20px;
+    font-family: "Press Start 2P", cursive;
+    font-size: 13px;
     transform: translate(-50%, 50%);
     opacity: 1;
 }
