@@ -6,7 +6,9 @@ const getApiTypes = async () => {
     let tipos = await Type.findAll({ attributes: ["name"] });   // Nos guardamos los nombres de los Type de la db
     if (!tipos.length) {    // Si no hay tipos, anda al catch 
       let url = `https://pokeapi.co/api/v2/type`;   // Creamos una variable con los valores de la api
-      tipos = await axios.get(url);   // Hacemos la peticion a la api
+      tipos = await axios.get(url, {
+        headers: { "Accept-Encoding": "gzip,deflate,compress" }
+      });   // Hacemos la peticion a la api
       tipos = tipos.data.results.map((result) => ({   // Recorremos la api guardando sus valores
         name: result.name,
       }));

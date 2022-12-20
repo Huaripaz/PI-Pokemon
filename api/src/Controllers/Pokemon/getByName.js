@@ -14,9 +14,9 @@ const getByName = async (name) => {
     if (nameDb) {
       return nameDb;
     }
-    const namePokemon = await axios.get(
-      `https://pokeapi.co/api/v2/pokemon/${name}`
-    );
+    const namePokemon = await axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`, {
+      headers: { "Accept-Encoding": "gzip,deflate,compress" }
+    });
     if (namePokemon.data) {
       let r = namePokemon.data;
       let pokeName = {

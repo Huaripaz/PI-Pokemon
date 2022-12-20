@@ -41,7 +41,9 @@ router.get("/:id", async (req, res) => {    // Creamos la ruta
 
     } else {    // Si no encuentra el pokemon en mi db lo busca en la api
 
-      const allPokeId = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);   // Hacemos la peticion a la api
+      const allPokeId = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`, {
+        headers: { "Accept-Encoding": "gzip,deflate,compress" }
+      });   // Hacemos la peticion a la api
 
       const superData = allPokeId.data;
 

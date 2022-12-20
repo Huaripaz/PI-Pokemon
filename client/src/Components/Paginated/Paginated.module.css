@@ -16,7 +16,7 @@
   justify-content: center;
   align-items: center;
   color: transparent;
-  background: url(./poke-cerrada.png);
+  background: url(./close-pokeball.png);
   background-size: cover;
   width: 60px;
   height: 60px;
@@ -24,7 +24,7 @@
 }
 
 .paginated .active {
-  background: url(./poke-abierta.png);
+  background: url(./open-pokeball.png);
   background-size: cover;
   color: #fff;
   font-weight: bold;
