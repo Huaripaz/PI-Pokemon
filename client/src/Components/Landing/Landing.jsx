@@ -26,7 +26,7 @@ export default function LandingPage() {
                 </Link>
             </div>
             <h2 className='text-footer'>
-            Huari Patey Paz © Henry's individual project 
+                Huari Patey Paz © Henry's individual project
             </h2>
         </div>
     );
