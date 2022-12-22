@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
 .content {
   display: flex;
   background-image: url(./poke-create.png);
@@ -5,14 +7,12 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
-  font-family: 'TTVTechPrecomput', sans-serif;
+  font-family: "Press Start 2P", cursive;
 }
-
 .msgError {
   color: red;
   font-weight: bold;
 }
-
 .formPerfil {
   color: #343a40;
   display: flex;
@@ -22,7 +22,6 @@
   margin-left: 10%;
   margin-bottom: 70px;
 }
-
 .form {
   padding: 0.5rem;
   display: flex;
@@ -34,29 +33,26 @@
   height: 600px;
   margin: 10px;
   background-color: rgba(201, 192, 192, 0.856);
-  font-family: 'TTVTechPrecomput', sans-serif;
+  font-family: "Press Start 2P", cursive;
   color: #1a1b1b;
 }
-
 .titleForm {
   display: flex;
   justify-content: center;
-  font-size: 60px;
+  font-size: 38px;
   color: #1a1b1b;
   font-weight: bold;
   margin-top: 30px;
 }
-
 .input:focus {
   outline: none;
 }
-
 .inputs{
   margin-left: 70px;
   margin-bottom: 10px;
-  align-items: flex-start;
+  display: flex;
+  align-items: center;
 }
-
 .inputName {
   padding: 3px;
   font-size: 16px;
@@ -68,9 +64,8 @@
   font-family: monospace;
   font-weight: normal;
   display: inline-block;
-  width: 207px;
+  width: 240px;
 }
-
 .inputStrength {
   padding: 3px;
   font-size: 16px;
@@ -82,9 +77,8 @@
   font-family: monospace;
   font-weight: normal;
   display: inline-block;
-  width: 173px;
+  width: 160px;
 }
-
 .inputDefense {
   padding: 3px;
   font-size: 16px;
@@ -96,9 +90,8 @@
   font-family: monospace;
   font-weight: normal;
   display: inline-block;
-  width: 175px;
+  width: 180px;
 }
-
 .inputImg{
   padding: 3px;
   font-size: 16px;
@@ -110,9 +103,8 @@
   font-family: monospace;
   font-weight: normal;
   display: inline-block;
-  width: 203px;
+  width: 220px;
 }
-
 .inputHealth {
   padding: 3px;
   font-size: 16px;
@@ -126,7 +118,6 @@
   display: inline-block;
   width: 200px;
 }
-
 .inputHeight {
   padding: 3px;
   font-size: 16px;
@@ -140,22 +131,7 @@
   display: inline-block;
   width: 200px;
 }
-
 .inputWeight {
-  padding: 3px;
-  font-size: 16px;
-  border-width: 2px;
-  border-style: solid;
-  border-radius: 5px;
-  border-color: #000000;
-  color: #000000;
-  font-family: monospace;
-  font-weight: normal;
-  display: inline-block;
-  width: 193.5px;
-}
-
-.inputSpeed {
   padding: 3px;
   font-size: 16px;
   border-width: 2px;
@@ -168,7 +144,19 @@
   display: inline-block;
   width: 200px;
 }
-
+.inputSpeed {
+  padding: 3px;
+  font-size: 16px;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: #000000;
+  color: #000000;
+  font-family: monospace;
+  font-weight: normal;
+  display: inline-block;
+  width: 220px;
+}
 .inputTypes {
   padding: 3px;
   font-size: 16px;
@@ -180,24 +168,21 @@
   font-family: monospace;
   font-weight: normal;
   display: inline-block;
-  width: 217px;
+  width: 230px;
 }
-
 .title5 {
-  font-size: 30px;
+  font-size: 20px;
 }
-
 .concatFiltro {
   display: inline-flex;
 }
-
 .boton {
   justify-content: flex-start;
   border-radius: 35px;
   border: 3px solid #272727;
   list-style: none;
   color: #252422;
-  font-family: 'TTVTechPrecomput', sans-serif;
+  font-family: "Press Start 2P", cursive;
   font-weight: bold;
   margin-top: 30px;
   margin-left: 30px;
@@ -207,11 +192,10 @@
   padding: 8px 20px;
   outline: none;
   cursor: pointer;
-  font-size: 40px;
+  font-size: 25px;
   background-color: #FFD700;
 
 }
-
 .boton::before {
   content: " ";
   position: absolute;
@@ -223,7 +207,6 @@
   z-index: -1;
   transition: .2s;
 }
-
 .boton:hover {
   border-color: #0000CD;
   box-shadow: 0px 3px 15px 0px black;
@@ -232,7 +215,6 @@
   color: #fdfdfde7;
   transition: all 0.3 ease-out;
 }
-
 .types {
   margin-left: 70px;
   display: flex;
@@ -246,7 +228,6 @@
   width: 80%;
   height: 7rem; */
 }
-
 .choosed {
   width: 200px;
   height: 35px;
@@ -256,7 +237,6 @@
   justify-content: center;
   overflow-x: auto;
 }
-
 .inputType {
   width: 6rem;
   height: 2.1rem;
@@ -272,7 +252,6 @@
   align-items: center;
   align-content: center;
 }
-
 .cross {
   width: 18px;
   height: 18px;
@@ -284,31 +263,27 @@
   align-items: center;
   align-content: center;
 }
-
 .cross:hover {
   color: #FFD700;
   transition: all 0.3 ease-out;
   border-color: #FFD700;
   background-color: #000000;
 }
-
 .pokeName {
   font-size: 0.8rem;
   font-family: Helvetica;
 }
-
 .contBtnCreate {
   display: flex;
   flex-direction: row-reverse;
 }
-
 .btn-createPoke {
   border-radius: 35px;
   border-color: #403d39;
   list-style: none;
   color: #252422;
-  font-family: 'TTVTechPrecomput', sans-serif;
-  font-size: 30px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 25px;
   margin-right: 20px;
   margin-bottom: 10px;
   position: relative;
@@ -321,8 +296,6 @@
   background-color: #FFD700;
   
 }
-
-
 .btn-createPoke::before {
   content: " ";
   position: absolute;
@@ -334,7 +307,6 @@
   z-index: -1;
   transition: .2s;
 }
-
 .btn-createPoke:hover {
   border-color: #252422;
   box-shadow: 0px 3px 20px 0px black;

@@ -13,7 +13,6 @@
     font-family: "Press Start 2P", cursive;
     margin: 15px 10px;
 }
-
 .card-details {
     color: black;
     height: 100%;
@@ -21,18 +20,15 @@
     place-content: center;
     justify-items: center;
 }
-
 .card-details img {
     width: 120px;
     height: 120px;
 }
-
 .img-game {
     margin: 0 auto;
     margin-top: 10px;
     align-items: center;
 }
-
 .card-button {
     transform: translate(-50%, 125%);
     width: 60%;
@@ -49,13 +45,10 @@
     border-color: #fdfdfde7;
     margin-top: 10px;
 }
-
-
 .text-body {
     color: #252422;
     font-size: 13px;
 }
-
 /*Text*/
 .text-title {
     font-size: 17px;
@@ -63,12 +56,10 @@
     color: #252422;
     margin: 0%;
 }
-
 /*Hover*/
 .card:hover {
     box-shadow: 0px 3px 20px 0px black;
 }
-
 .card:hover .card-button {
     font-family: "Press Start 2P", cursive;
     font-size: 13px;

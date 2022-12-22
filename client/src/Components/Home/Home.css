@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
 .card-poke {
     display: flex;
     flex-wrap: wrap;
@@ -5,7 +7,6 @@
     margin-top: 15px;
     margin-bottom: 15px;
 }
-
 .div-filt {
     display: flex;
     grid-template-columns: repeat(4, 1fr);
@@ -16,13 +17,11 @@
     margin-bottom: 10px;
     justify-content: space-around;
 }
-
 .Loader {
     justify-content: center;
 }
-
 .home-container {
-    font-family: 'TTVTechPrecomput', sans-serif;
+    font-family: "Press Start 2P", cursive;
     font-size: 30px;
     background-color: #0000CD;
     background-image: url(./pokeHome.png);
@@ -31,20 +30,18 @@
     background-size: cover;
     height: 150vh;
 }
-
 .name-filt {
-    font-family: 'TTVTechPrecomput', sans-serif;
-    font-size: 15px;
+    font-family: "Press Start 2P", cursive;
+    font-size: 13px;
     border: 3px solid #272727;
     color: #e5e5e5;
     background: #747474a4;
     border-radius: 15px;
     padding: 10px;
 }
-
 .div-not-found {
-    font-family: 'TTVTechPrecomput', sans-serif;
-    font-size: 40px;
+    font-family: "Press Start 2P", cursive;
+    font-size: 25px;
     border: 3px solid #272727;
     border-radius: 35px;
     width: 450px;
@@ -58,10 +55,9 @@
     justify-content: center;
     color: #1a1b1b;
 }
-
 .btn-final {
-    font-family: 'TTVTechPrecomput', sans-serif;
-    font-size: 20px;
+    font-family: "Press Start 2P", cursive;
+    font-size: 16px;
     font-weight: bold;
     border-radius: 30px;
     border: 3px solid #272727;
@@ -76,7 +72,6 @@
     outline: none;
     background-color: #FFD700;
 }
-
 .btn-final:hover {
     border: 3px solid #272727;
     transform: scale(1.07);

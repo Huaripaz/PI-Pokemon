@@ -12,7 +12,6 @@
     font-size: 50px;
     font-weight: bold;
 }
-
 .container {
     display: flex;
     flex-direction: column;
@@ -24,16 +23,13 @@
     justify-content: center;
     align-items: center;
 }
-
 .social-media {
     display: flex;
     margin-left: 93%;
 }
-
 .linkedin {
     width: 45px;
 }
-
 .linkedin::before {
     content: " ";
     position: absolute;
@@ -44,16 +40,13 @@
     z-index: -1;
     transition: .2s;
 }
-
 .linkedin:hover {
     transform: scale(1.1);
     transition: all 0.3 ease-out;
 }
-
 .gitHub {
     width: 45px;
 }
-
 .gitHub::before {
     content: " ";
     position: absolute;
@@ -64,21 +57,16 @@
     z-index: -1;
     transition: .2s;
 }
-
 .gitHub:hover {
     transform: scale(1.1);
     transition: all 0.3 ease-out;
 }
-
-
 .logoLand {
     width: 700px;
 }
-
 .buttonHome {
     width: 200px;
 }
-
 .buttonHome::before {
     content: " ";
     position: absolute;
@@ -89,12 +77,10 @@
     z-index: -1;
     transition: .2s;
 }
-
 .buttonHome:hover {
     transform: scale(1.1);
     transition: all 0.3 ease-out;
 }
-
 .text-footer {
     font-family: "Press Start 2P", cursive;
     text-transform: capitalize;

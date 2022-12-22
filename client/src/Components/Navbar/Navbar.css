@@ -1,22 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
 .nav-container {
     height: fit-content;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    font-family: 'TTVTechPrecomput', sans-serif;
+    font-family: "Press Start 2P", cursive;
     padding: 0.5rem;
 }
-
 .logo {
     width: 300px;
 }
-
 .create-poke {
     border-radius: 35px;
     border: 2.5px solid #252422;
     list-style: none;
     color: #252422;
-    font-family: 'TTVTechPrecomput', sans-serif;
+    font-family: "Press Start 2P", cursive;
+    font-size: 20px;
     font-weight: bold;
     position: relative;
     cursor: pointer;
@@ -24,11 +25,9 @@
     padding: 8px 12px;
     outline: none;
     cursor: pointer;
-    font-size: 25px;
     background-color: #FFD700;
     width: 100%;
 }
-
 .create-poke:before {
     content: " ";
     position: absolute;
@@ -40,7 +39,6 @@
     z-index: -1;
     transition: .2s;
 }
-
 .create-poke:hover {
     border-color: #0000CD;
     box-shadow: 0px 3px 20px 0px rgb(124, 124, 124);
@@ -49,7 +47,6 @@
     color: #252422;
     transition: all 0.3 ease-out;
 }
-
 .div-buttons {
     display: flex;
     flex-direction: column;
@@ -59,11 +56,9 @@
     margin-right: 30px;
     margin-top: 10px;
 }
-
 .div-buttons button{
     width: 100%;
 }
-
 .div-search {
     display: flex;
     flex-direction: column;
