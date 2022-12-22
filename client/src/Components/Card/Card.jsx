@@ -25,8 +25,7 @@ export default function Card({ id, types, name, img}) {
                 </div>
                 <h3 className="text-title">{name[0].toUpperCase() + name.substring(1)}</h3>
                 <h3 className="text-body">
-                    Type:{" "}
-                    {typesArr.map((e) => e + " ")}
+                    Type: {typesArr.map((e) => e + " ")}
                 </h3>
             </div>
             <Link className="por" to={`/pokemons/${id}`}>
