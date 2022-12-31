@@ -3,7 +3,7 @@ const axios = require("axios");
 const getApiPoke = async (url) => {
   try {
     // aca me traigo los primeros 20 pokemones, sino explota todo y la peticion se hace larguisima
-    const apiResults = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=20`, { //https://pokeapi.co/api/v2/pokemon?limit=151
+    const apiResults = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=151`, { //https://pokeapi.co/api/v2/pokemon?limit=151
       headers: { "Accept-Encoding": "gzip,deflate,compress" }
     });
     
