@@ -4,6 +4,9 @@ import Landing from "./Components/Landing/Landing.jsx";
 import Home from "./Components/Home/Home.jsx";
 import Details from "./Components/Details/Details";
 import CreatePoke from "./Components/Create/CreatePoke";
+import axios from "axios";
+
+axios.defaults.baseURL = 'http://localhost:3001/'
 
 function App() {
   return (

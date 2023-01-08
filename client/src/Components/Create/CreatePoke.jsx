@@ -212,11 +212,10 @@ export default function CreatePoke() {
               Image:
             </label>
             <input
-              type="file"
-              accept=".jpg, .jpeg, .png"
               key="image2"
               name="img"
               value={input.img}
+              placeholder="URL"
               onChange={(e) => handelChange(e)}
               className="inputImg"
             ></input>

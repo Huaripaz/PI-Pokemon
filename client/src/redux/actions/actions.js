@@ -3,7 +3,7 @@ import axios from 'axios';
 export function getPokes() {
     return function (dispatch) {
         axios
-            .get("http://localhost:3001/pokemons")
+            .get("/pokemons")
             .then((res) => {
                 return dispatch({
                     type: "GET_ALL_POKEMONS",
@@ -17,7 +17,7 @@ export function getPokes() {
 export function getTypes() {
     return function (dispatch) {
         axios
-            .get("http://localhost:3001/types")
+            .get("/types")
             .then((res) => {
                 return dispatch({
                     type: "GET_ALL_TYPES",
@@ -38,7 +38,7 @@ export function getName(name) {
 export function getDetail(id) {
     return function (dispatch) {
         axios
-            .get("http://localhost:3001/" + id)
+            .get("/" + id)
             .then((res) => {
                 return dispatch({
                     type: "GET_DETAILS",
